@@ -1,8 +1,17 @@
-# Git 工作流 (Git Workflow)
+# Git 规则（由 Claude 负责，作者不需要操作）
 
-- 不直接提交到 main；在 feature branch 上开发。
-- Commit message 使用 Conventional Commits：
-  `feat:` / `fix:` / `docs:` / `refactor:` / `test:` / `chore:`
-- 每个 commit 只做一件事，保持小而可回滚。
-- 未经明确要求，不创建 Pull Request，不 force push。
-- 云端 session 中，改动必须 commit 并 push，否则 container 回收后会丢失。
+作者不熟悉 Git。Claude 在后台完成全部操作，和作者交流时只用通俗说法：
+
+| Git 操作 | 对作者的说法 |
+|---|---|
+| commit + push | 保存 / 已保存到云端 |
+| branch | 草稿区 |
+| main | 正式版 |
+| merge PR | 并入正式版 |
+
+## 规则
+- 每完成一段有意义的工作（例如写完一节、改完大纲），就 commit + push。
+- Commit message 用中文简短描述，例如：`写作：第一章初稿`、`大纲：调整第二部分顺序`。
+- 在 session 指定的分支上工作；当作者说“定稿”“并入正式版”，或者任务告一段落时，开 PR 并合并到 main。作者已授权 Claude 自行合并。
+- 绝不 force push，不改写历史，不删除章节文件（除非作者明确要求）。
+- 遇到冲突或报错时，用通俗语言告诉作者发生了什么，不要只贴报错原文。

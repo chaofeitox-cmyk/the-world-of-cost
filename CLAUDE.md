@@ -1,60 +1,45 @@
 # CLAUDE.md
 
-本文件是 Claude Code 的项目级说明（project memory），会在每个 session 开始时自动加载。
-本地模式与 GitHub 云端模式都会读取它（前提：已 commit + push）。
+本仓库用于写一本书，不是软件项目。每个 Claude Code session 开始时都会自动读取本文件。
 
-## 项目概览 (Project Overview)
+## 这本书 (The Book)
 
-- 项目名称：the-world-of-cost
-- 一句话描述：TODO - 用一句话说明这个项目解决什么问题
-- 目标用户：TODO
-- 当前阶段：TODO（例如 idea / MVP / production）
+- 暂定书名：The World of Cost（中文书名待定）
+- 类型：非虚构 · 科普 / 大众读物
+- 语言：中文（专业术语首次出现时可附英文）
+- 目标读者：TODO（例如：对经济和生活好奇的普通读者）
+- 核心问题：TODO（这本书想让读者看懂什么？）
+- 当前阶段：只有想法 -> 下一步是一起确定主题、读者和大纲
 
-## 技术栈 (Tech Stack)
+## 关于作者 (About the Author)
 
-- Language：TODO
-- Framework：TODO
-- Package manager：TODO
-- Database / Storage：TODO
+- 作者是本仓库唯一的用户，也是这本书的唯一作者。
+- 作者不熟悉 Git。所有 Git 操作由 Claude 负责，见 @.claude/rules/git-workflow.md。
+- 与作者交流时用中文，语言要通俗，避免技术术语；如果必须提到某个技术术语，要顺便解释一句。
+- 作者的想法不清楚时，用选项（1、2、3）提问，确认后再写。
+- 涉及方向性决定（例如书名、结构、风格）时，给出：选项 / 优点 / 缺点 / 推荐。
 
-## 常用命令 (Common Commands)
-
-```bash
-# install   TODO
-# dev       TODO
-# test      TODO
-# lint      TODO
-# build     TODO
-```
-
-## 目录结构 (Project Structure)
+## 文件结构 (Files)
 
 ```
 .
-├── CLAUDE.md            # 本文件：项目总说明
-├── .claude/
-│   ├── settings.json    # 团队共享的权限 / hooks 配置
-│   ├── rules/           # 分主题的规则文件（按需加载）
-│   ├── commands/        # 自定义 slash commands
-│   └── agents/          # 自定义 subagents
-└── TODO                 # 源码目录
+├── CLAUDE.md              # 本文件：这本书的总说明
+├── README.md              # 仓库首页简介
+├── notes/
+│   ├── progress.md        # 写作进度与下一步（每次 session 必读、必更新）
+│   └── ideas.md           # 灵感、素材、待查资料
+├── book/
+│   ├── outline.md         # 全书大纲
+│   └── chNN-标题.md       # 正文，一章一个文件，例如 ch01-一杯咖啡的成本.md
+└── .claude/
+    ├── rules/             # 写作风格、结构、Git 规则
+    ├── commands/          # 快捷命令，例如 /save、/review-chapter
+    └── agents/            # 专门的助手，例如 editor（审稿编辑）
 ```
 
-## 沟通偏好 (Communication)
+## 工作方式 (How We Work)
 
-- 回答以中文为主，技术关键词保留 English。
-- 回答简洁、结构化，多用表格；必要时给出简短总结。
-- 需求不清晰时，先用选项式（1、2、3）提问澄清，再动手。
-- 决策类问题给出：Options / Pros / Cons / Recommendation。
-
-## 工作规则 (Working Rules)
-
-详细规则见 `.claude/rules/`：
-
-- @.claude/rules/code-style.md
-- @.claude/rules/git-workflow.md
-- @.claude/rules/security.md
-
-## 注意事项 (Gotchas)
-
-- TODO：记录踩过的坑、特殊约定、不要修改的文件等。
+1. 每次开始：先读 `notes/progress.md`，告诉作者上次做到哪里、建议的下一步是什么。
+2. 写作时遵守：@.claude/rules/writing-style.md 和 @.claude/rules/book-structure.md
+3. 每次结束，或完成一段有意义的工作后：更新 `notes/progress.md`，然后保存（commit + push）。
+4. 云端 session 不会记住上一次对话，`notes/progress.md` 就是这本书的“记忆”，一定要及时更新。
