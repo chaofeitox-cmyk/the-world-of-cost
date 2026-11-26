@@ -1,0 +1,7 @@
+# Claude Code 个人 / 本地配置（不进 Git）
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Secrets
+.env
+.env.*
